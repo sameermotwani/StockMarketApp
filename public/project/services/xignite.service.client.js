@@ -6,7 +6,8 @@
         .module("StockExchApp")
         .factory("XigniteService", XigniteService);
 
-    var key = "A865922A6D9D4AF3B07CE02BA5F43D55";
+    //var key = "A865922A6D9D4AF3B07CE02BA5F43D55";
+    var key= "0C9534C046A54BE6A9022CC67370B2CF"
     var baseURL= 'https://globalnews.xignite.com/xGlobalNews.json/GetHistoricalReleasesBySecurity?IdentifierType=Symbol&Identifier=';
 
     function XigniteService($http,$sce) {
