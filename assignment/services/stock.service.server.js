@@ -19,8 +19,8 @@ module.exports = function (app, models) {
         //console.log(startDate);
         //console.log(endDate);
         //console.log(date);
-        var username = process.env.INTRINIO_USERNAME;
-        var password = process.env.INTRINIO_PASSWORD;
+        var username = "1c2d3fb4931f0e10018c047007dd8214";
+        var password = "0aa3aa1e48539e474a0140ec5ff6397f";
         var auth = "Basic " + new Buffer(username + ':' + password).toString('base64');
         var count=0;
        // https://api.intrinio.com/companies?identifier=AA
