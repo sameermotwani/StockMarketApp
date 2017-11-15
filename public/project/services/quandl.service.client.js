@@ -6,7 +6,9 @@
         .module("StockExchApp")
         .factory("QuandlService", QuandlService);
 
-    var key = "S1RVzQ6zeZ-QAbjQUyi6";
+    //var key = "S1RVzQ6zeZ-QAbjQUyi6";
+    var key = "nAeN54UVF6MoXSyFmFs_";
+
     var baseURL = 'https://www.quandl.com/api/v3/';
 
     function QuandlService($http) {
