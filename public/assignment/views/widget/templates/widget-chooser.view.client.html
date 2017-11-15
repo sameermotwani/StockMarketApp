@@ -1,0 +1,41 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-text pull-left">
+            <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+        </div>
+        <div class="navbar-text pull-right" ng-hide="model.selectedWidget">
+            <a href=""  ng-click="model.createWidget(model.widget)">
+                <span class="glyphicon glyphicon-ok"></span>
+            </a>
+        </div>
+        <div class="navbar-header">
+            <a class="navbar-brand">
+                Choose Widget
+            </a>
+        </div>
+    </div>
+</nav>
+<div class="container-fluid akd-vertical-spacing">
+    <ul class="list-group">
+        <li class="list-group-item" ng-repeat="widgetType in model.widgetTypes">
+            <a href=""  ng-click="model.createWidget(widgetType)">
+                {{widgetType}}
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="row container-fluid">
+        <div class="col-xs-12">
+            <div class="navbar-text pull-right">
+                <a href="#/user/{{model.userId}}">
+                    <span class="glyphicon glyphicon-user"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>

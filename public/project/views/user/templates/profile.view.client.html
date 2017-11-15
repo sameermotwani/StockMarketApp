@@ -1,0 +1,77 @@
+<div ng-controller="MainController">
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="">
+                Profile
+            </a>
+
+
+            <p class="navbar-text pull-right">
+                <a class="navbar-link" ng-click="model.updateUser(model.user)">
+                    <span class="glyphicon glyphicon-ok">
+                    </span>
+                </a>
+            </p>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+<div class="main-login main-center">
+    <div class="row main">
+    <div class="alert alert-success" ng-show="model.message">
+        {{model.message}}
+    </div>
+        <div class="avatar">
+            <img src="https://www.wallstreetoasis.com/files/wall-street_1.jpg" alt="Avatar" class="avatar">
+        </div>
+    <label for="username">Username</label>
+    <input ng-model="model.user.username"
+           id="username"
+           ng-readonly="true"
+           class="form-control"
+           placeholder="roger18"/>
+
+    <label for="email">Email</label>
+    <input ng-model="model.user.email"
+           id="email"
+           type="email"
+           class="form-control"
+           placeholder="roger@gmail.com"/>
+
+    <label for="first">First Name</label>
+    <input ng-model="model.user.firstName"
+           id="first"
+           class="form-control"
+           placeholder="Roger"/>
+
+    <label for="last">Last Name</label>
+    <input ng-model="model.user.lastName"
+           id="last"
+           class="form-control"
+           placeholder="Federer"/>
+
+    <label for="phone">Phone</label>
+    <input ng-model="model.user.phone"
+           type="text"
+           id="phone"
+           class="form-control"
+           data-country="US"/>
+
+    <label for="role">Role</label>
+    <input ng-model="model.user.role"
+           class="form-control"
+           ng-readonly="true"
+           id="role">
+
+    <a class="btn btn-primary btn-block margin-bottom margin-top"
+       ng-href="#/user/{{model.user._id}}/main">Main Page</a>
+
+
+    <a ng-click="model.logout()" class="btn btn-danger  btn-block">Logout</a>
+    </div>
+</div>
+</div>
+
+</div>

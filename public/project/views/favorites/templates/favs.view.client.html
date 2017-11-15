@@ -1,0 +1,30 @@
+<!--/**-->
+<!--* Created by samym on 4/14/2017.-->
+<!--*/-->
+
+<div class="panel panel-info">
+    <div class="panel-heading" >
+        <div class="pull-right">
+            <a data-toggle="collapse" data-target="#collapse_latest12">
+                <span class="glyphicon glyphicon-chevron-down"></span>
+            </a>
+        </div>
+        <div><b>Favorites</b></div>
+    </div>
+
+    <div class="panel-body panel-group collapse in" id="collapse_latest12">
+        <div ng-show="model.noFavs" class="alert alert-info">{{model.noFavs}}</div>
+        <ul class="list-group">
+            <li class="list-group-item" ng-repeat="stock in currentUser.stocks" style="padding: 5px">
+                <div class="pull-right">
+                    <a href="" ng-click="model.deleteFromFavs()">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </a>
+                </div>
+                <a ng-click=model.getStockPageforFav(stock.ticker)>
+                    <span class="headline">{{stock.ticker}}</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

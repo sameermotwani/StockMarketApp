@@ -1,0 +1,143 @@
+<nav class="navbar-default navbar-fixed-top topnav" role="navigation">
+    <div class="container topnav">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapisble-header">
+                <span class="sr-only">Toggle navigation</span><i class="fa fa-bars"></i>
+            </button>
+            <span>
+                <a class="navbar-brand topnav pull-left" href="#">STOCKER</a>
+                <angucomplete-alt id="stockLookup"
+                                  placeholder="Search Stocks"
+                                  pause="500"
+                                  selected-object="model.selectedStock"
+                                  remote-url="/api/project/stock?search="
+                                  remote-url-data-field="results"
+                                  title-field="name"
+                                  clear-selected="true"
+                                  minlength="2"
+                                  input-class="form-control form-control-small"
+                                  match-class="highlight" />
+            </span>
+
+        </div>
+        <div class="collapse navbar-collapse" id="collapisble-header">
+            <ul class="nav navbar-nav navbar-right">
+                <li ng-hide="model.showAddToFav">
+                    <a class="btn btn-block " ng-click=model.addToFavs()>Add To Favorites</a>
+                </li>
+
+                <li>
+                    <!--<a class="btn btn-block" ng-href="#/user/{{model.userId}}" >My Account</a>-->
+                    <a class="btn btn-block" data-toggle="modal" data-target="#myaccount">My Account</a>
+                </li>
+
+                <li>
+                    <a class="btn btn-block " ng-click=model.logout()>Sign Out</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<div class="modal fade" id="myaccount" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div>
+                <button type="button pull-left" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="container-fluid">
+                <h1><b>My Profile</b></h1>
+                <div class="avatar" ng-show="model.user.url">
+                <img ng-src="{{model.user.url}}" alt="Avatar" class="avatar"/>
+                </div>
+
+                <div class="alert alert-success" ng-show="model.message">
+                    {{model.message}}
+                </div>
+                <form class="form-group" action="/api/project/upload"  name="form"  method="post" enctype="multipart/form-data">
+                    <label for="username">Username</label>
+                    <input ng-model="model.user.username"
+                           id="username"
+                           ng-readonly="true"
+                           class="form-control"
+                           placeholder="bob123"/>
+
+                    <label for="email">Email</label>
+                    <input ng-model="model.user.email"
+                           id="email"
+                           type="email"
+                           class="form-control"
+                           placeholder="bob@gmail.com"/>
+
+                    <label for="first">First Name</label>
+                    <input ng-model="model.user.firstName"
+                           id="first"
+                           class="form-control"
+                           placeholder="Bob"/>
+
+                    <label for="last">Last Name</label>
+                    <input ng-model="model.user.lastName"
+                           id="last"
+                           class="form-control"
+                           placeholder="Rogers"/>
+
+                    <label for="phone">Phone</label>
+                    <input ng-model="model.user.phone"
+                           type="text"
+                           id="phone"
+                           class="form-control"
+                           data-country="US"/>
+
+
+                    <label for="url">URL</label>
+                    <input ng-model="model.user.url"
+                           type="text"
+                           id="url"
+                           class="form-control"/>
+
+
+                    <div class="form-group">
+                        <label for="upload">Upload Image</label>
+                        <input name="myFile" ng-model="model.user.url" type="file" class="form-control" id="upload">
+                    </div>
+
+                    <input  name="userId"    value="{{model.userId}}"   style="display: none"/>
+                    <button type="submit"    class="btn btn-block btn-primary">Upload</button>
+
+                    <label for="role">Role</label>
+                    <input ng-model="model.user.role"
+                           class="form-control"
+                           ng-readonly="true"
+                           id="role">
+
+
+
+                    <a class="btn btn-primary btn-block margin-bottom"
+                       ng-click="model.updateUser(model.user)">Update</a>
+                </form>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="col-sm-6 pull-sm-6">
+        <ng-include src="'views/graph/templates/graph.view.client.html'" ></ng-include>
+    </div>
+    <div class="col-sm-6 pull-sm-6">
+        <ng-include src="'views/news/templates/latest.view.client.html'"></ng-include>
+    </div>
+    <div class="col-sm-6 pull-sm-6">
+        <ng-include src="'views/favorites/templates/favs.view.client.html'" ></ng-include>
+    </div>
+    <div class="col-sm-6 pull-sm-6">
+        <ng-include src="'views/opinion/templates/opinion.view.client.html'"></ng-include>
+    </div>
+    <div class="col-sm-6 pull-sm-6">
+        <ng-include src="'views/news/templates/specific.view.client.html'" ></ng-include>
+    </div>
+
+</div>

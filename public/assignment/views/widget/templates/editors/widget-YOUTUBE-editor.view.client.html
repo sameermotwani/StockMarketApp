@@ -1,0 +1,27 @@
+<h1>YOUTUBE Editor</h1>
+<div ng-show="model.error" class="alert alert-danger" role="alert">
+    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+    {{model.error}}
+</div>
+<form method="POST" name="form" class="form-group" novalidate>
+    <div class="form-group">
+        <label for="widget-text">Text</label>
+        <input type="text"
+               required
+               name="widgettextfield"
+               class="form-control"
+               id="widget-text"
+               placeholder="Enter Text Here"
+               ng-model="model.widget.text">
+        <span class="alert-danger"
+              ng-show="model.error && form.widgettextfield.$invalid">widget text is required.</span>
+    </div>
+    <div class="form-group">
+        <label for="widget-url">URL</label>
+        <input type="text" class="form-control" id="widget-url" placeholder="Enter URL" ng-model="model.widget.url">
+    </div>
+    <div class="form-group">
+        <label for="widget-width">Width</label>
+        <input type="text" class="form-control" id="widget-width" placeholder="Enter Width" ng-model="model.widget.width">
+    </div>
+</form>

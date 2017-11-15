@@ -1,0 +1,22 @@
+<div class="panel panel-info" ng-controller="SpecificController as spfc" id="specific_news">
+    <div class="panel-heading" >
+        <div class="pull-right">
+            <a data-toggle="collapse" data-target="#collapse_specific">
+                <span class="glyphicon glyphicon-chevron-down"></span>
+            </a>
+        </div>
+        <div><b>{{spfc.header}}</b></div>
+    </div>
+    <div class="panel-body panel-group collapse in" id="collapse_specific">
+        <div ng-show="spfc.noHeadlines" class="alert alert-info">
+            {{spfc.noHeadlines}}
+        </div>
+        <ul class="list-group">
+            <li class="list-group-item" ng-show="spfc.headlines" ng-repeat="headline in spfc.headlines" style="padding: 5px">
+                <a href={{headline.Url}} target="_blank">
+                    <span class="">{{headline.Title}}</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

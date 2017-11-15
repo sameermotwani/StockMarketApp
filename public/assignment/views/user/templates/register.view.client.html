@@ -1,0 +1,50 @@
+
+<div class="container-fluid">
+
+    <h1>Register</h1>
+
+    <form method="POST" name="form" novalidate>
+        <div class="alert alert-danger" ng-show="model.error">
+            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+            {{model.error}}
+        </div>
+
+        <div class="form-group">
+            <input ng-model="user.username"
+                   name="userfield"
+                   class="form-control"
+                   autocomplete="off"
+                   placeholder="username"
+                   required/>
+            <span class="alert-danger"
+                  ng-show="model.error && form.userfield.$invalid">username is required.</span>
+        </div>
+        <div class="form-group">
+            <input ng-model="user.password"
+                   name="passwordfield"
+                   class="form-control"
+                   type="password"
+                   placeholder="password"
+                   required/>
+            <span class="alert-danger"
+                  ng-show="model.error && form.passwordfield.$invalid">password is required.</span>
+        </div>
+        <div class="form-group">
+            <input ng-model="user.vpassword"
+                   name="verifypasswordfield"
+                   class="form-control"
+                   type="password"
+                   placeholder="verify password"
+                   required/>
+            <span class="alert-danger"
+                  ng-show="model.error && form.verifypasswordfield.$invalid">verify password is required.</span>
+        </div>
+        <a class="btn btn-primary btn-block" ng-click="model.createUser(user)">
+            Register
+        </a>
+        <a class="btn btn-danger btn-block" href="#/login">
+            Cancel
+        </a>
+    </form>
+
+</div>

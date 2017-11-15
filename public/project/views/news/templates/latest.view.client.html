@@ -1,0 +1,25 @@
+<div class="panel panel-info" ng-controller="LatestController as ltst">
+    <div class="panel-heading" >
+        <div class="pull-right">
+            <a data-toggle="collapse" data-target="#collapse_latest">
+                <span class="glyphicon glyphicon-chevron-down"></span>
+            </a>
+        </div>
+        <div><b>Recent Stories</b></div>
+    </div>
+    <div class="panel-body panel-group collapse in" id="collapse_latest">
+        <div class="alert alert-info" ng-show="ltst.noHeadlines">
+            {{ltst.noHeadlines}}
+        </div>
+        <ul class="list-group">
+            <li class="list-group-item" ng-repeat="headline in ltst.recentheadlines" style="padding: 5px">
+                <a href={{headline.url}} target="_blank">
+                    <span class="headline">{{headline.title}}</span>
+                </a>
+                <div>
+                    <span>{{headline.summary}}</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

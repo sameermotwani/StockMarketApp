@@ -1,0 +1,64 @@
+<div class="container-fluid">
+    <h2>Admin Page</h2>
+    <button type="button" ng-click="model.logout()" class="pull-right btn btn-success">Log Out</button>
+    <h3> User Management</h3>
+
+    <table class="table table-responsive table-stripped">
+        <thead>
+        <tr>
+            <th>Username</th>
+            <th class="hidden-xs">First Name</th>
+            <th class="hidden-xs">Last Name</th>
+            <th class="hidden-xs">Email</th>
+            <th>Role</th>
+            <th class="tdwidth">Edit</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="user in model.users">
+            <!--<td>{{user.username}}</td>-->
+            <td><input ng-model="user.username"
+                       type="text"
+                       id="name"
+                       class="form-control"/></td>
+            <td class="hidden-xs"><input ng-model="user.firstName"
+                       id="first"
+                       class="form-control"/></td>
+            <td class="hidden-xs"><input ng-model="user.lastName"
+                       id="last"
+                       class="form-control"/></td>
+            <td class="hidden-xs"><input ng-model="user.email"
+                       id="email"
+                       class="form-control"/></td>
+            <td>
+                <select ng-model="user.role" class="form-control">
+                    <option value="USER">USER</option>
+                    <option value="ANALYST">ANALYST</option>
+                    <option value="ADMIN">ADMIN</option>
+                </select></td>
+            <td>
+                <div class="buttons">
+                    <button type="button" class="btn btn-primary" ng-click="model.updateUser(user)">UPDATE</button>
+                    <button type="button" class="btn btn-danger" ng-click="model.deleteUser(user)">DELETE</button>
+                </div>
+            </td>
+        </tr>
+
+        </tbody>
+    </table>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Add User</button>
+
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+
+            <div class="modal-content">
+                <div>
+                    <button type="button pull-left" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <ng-include src="'views/user/templates/register.view.client.html'" ></ng-include>
+            </div>
+        </div>
+    </div>
+</div>

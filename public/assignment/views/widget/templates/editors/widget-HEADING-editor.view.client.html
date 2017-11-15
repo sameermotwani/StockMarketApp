@@ -1,0 +1,27 @@
+<h1>HEADER Editor</h1>
+<div ng-show="model.error" class="alert alert-danger" role="alert">
+    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+    {{model.error}}
+</div>
+<form method="POST" name="form" class="form-group" novalidate>
+    <div class="form-group">
+        <label>Text</label>
+        <input ng-model="model.widget.text"
+               required
+               name="widgettextfield"
+               class="form-control"/>
+        <span class="alert-danger"
+              ng-show="model.error && form.widgettextfield.$invalid">widget text is required.</span>
+    </div>
+    <div class="form-group">
+        <label>Size</label>
+        <select class="form-control" ng-model="model.widget.size">
+            <option selected>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+        </select>
+    </div>
+</form>

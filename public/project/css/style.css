@@ -1,0 +1,175 @@
+.highlight {
+    color: blue;
+}
+
+input.form-control {
+    margin-bottom: 5px;
+
+}
+
+.modal-content {
+    padding: 20px;
+    padding-bottom: 30px !important;
+}
+
+.tdwidth{
+    width: 190px;
+}
+
+.btn{
+    margin-bottom: 3px !important;
+}
+
+button.close {
+    -webkit-appearance: none;
+    padding: 4px;
+    cursor: pointer;
+    background: 0 0;
+    border: 0;
+}
+
+table, th , td  {
+    border: 1px solid grey;
+    border-collapse: collapse;
+    padding: 5px;
+}
+table tr:nth-child(odd) {
+    background-color: #f1f1f1;
+}
+table tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+.navbar.navbar-default.navbar-fixed-top {
+    background: #542890;
+}
+
+.youtube-widget {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+}
+
+.youtube-widget iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.navbar-default .navbar-link {
+    color: white;
+}
+
+.navbar-default .navbar-brand {
+    color: white;
+}
+
+.navbar.navbar-default.navbar-fixed-bottom {
+    background: #337ab7;
+}
+
+.navbar.navbar-info.navbar-fixed-top {
+    background: white;
+}
+
+.navbar-default .navbar-brand {
+    color: white;
+}
+
+a:hover {
+    text-decoration:none;
+}
+
+.jga-toolbar {
+    position: absolute;
+    right: 15px;
+    background-color: white;
+    padding-left: 5px;
+    padding-bottom: 5px;
+    border-bottom-left-radius: 5px;
+    opacity: 0.7;
+    z-index: 2;
+}
+
+@media screen and (min-width: 768px) {
+    .pull-right {
+        position: absolute;
+        right: 30px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .pull-left {
+        margin-left: 3%;
+    }
+
+    .pull-right {
+        margin-right: 3%;
+    }
+}
+.opinion-section {
+    padding: 5px;
+}
+.opinion-section .opinion-user{
+    font-weight: bold;
+    color: black;
+}
+
+.btn-default {
+    color: navy !important;
+    background-color: #fff;
+    border-color: #ccc;
+}
+
+.opinion-section .pull-right {
+    padding-left:5px;
+    padding-bottom:5px;
+    position: inherit;
+}
+
+.pull-right .glyphicon-remove{
+    color:red;
+}
+
+
+.opinion-add {
+    border-collapse: collapse;
+}
+
+body {
+    /*background-color: #fff;*/
+    background-image: url('../images/Image3.jpg');
+    padding-top: 60px;
+}
+
+div.angucomplete-holder {
+    display: inline-block;
+    padding-top: 8px;
+    width: calc(100% - 190px);
+    min-width: 100px;
+    max-width: 200px;
+}
+.angucomplete-holder:before {
+    font-family: FontAwesome;
+    content: "\f002";
+    top: 15px;
+    right: 10px;
+    border: none;
+    color: #ccc;
+    position: absolute;
+}
+
+
+.navbar-default.topnav {
+    background-color: black;
+}
+.panel-body.panel-group {
+    max-height: 430px;
+    overflow-y: auto;
+}
+
+select.form-control {
+    padding-bottom: 5px;
+}

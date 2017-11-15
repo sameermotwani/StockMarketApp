@@ -1,0 +1,28 @@
+<h1>TEXT Editor</h1>
+<div ng-show="model.error" class="alert alert-danger" role="alert">
+    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+    {{model.error}}
+</div>
+<form method="POST" name="form" class="form-group" novalidate>
+    <div class="form-group">
+        <label>Text</label>
+        <input ng-model="model.widget.text"
+               required
+               name="widgettextfield"
+               class="form-control"/>
+        <span class="alert-danger"
+              ng-show="model.error && form.widgettextfield.$invalid">widget text is required.</span>
+    </div>
+    <div class="form-group">
+        <label>Rows</label>
+        <input ng-model="model.widget.rows" class="form-control" type="number"/>
+    </div>
+    <div class="form-group">
+        <label>Placeholder</label>
+        <input ng-model="model.widget.placeholder" class="form-control"/>
+    </div>
+    <div class="form-control">
+        <label>Formatted</label>
+        <input align="right" ng-model="model.widget.formatted" type="checkbox" class="form-check"/>
+    </div>
+</form>

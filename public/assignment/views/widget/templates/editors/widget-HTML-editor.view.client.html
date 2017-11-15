@@ -1,0 +1,18 @@
+<h1>HTML Editor</h1>
+<div ng-show="model.error" class="alert alert-danger" role="alert">
+    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+    {{model.error}}
+</div>
+<form class="form-group">
+
+    <div class="form-group">
+        <label for="widget-text">Text</label>
+        <div ng-model="model.widget.text"
+             text-angular
+             id="widget-text"
+             ta-toolbar="[['h1','h2','h3'],['bold','italics','underline','strikeThrough'],
+        ['ul','ol'],['justifyLeft','justifyCenter','justifyRight','justifyFull'],
+        ['indent','outdent'],['html']]">
+        </div>
+    </div>
+</form>

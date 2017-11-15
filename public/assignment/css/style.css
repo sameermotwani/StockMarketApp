@@ -1,0 +1,59 @@
+input.form-control {
+    margin-bottom: 5px;
+}
+
+body {
+    padding-top: 36px;
+}
+
+.navbar-default {
+    background-color: #337ab7;
+    border-color: #e7e7e7;
+}
+
+.navbar-default .navbar-brand {
+    color: white;
+}
+
+.navbar a {
+    color: white;
+}
+.akd-vertical-spacing {
+    padding-top: 40px;
+    padding-bottom: 60px;
+}
+
+.akd-toolbar {
+    position: absolute;
+    right: 15px;
+    background-color: white;
+    padding: 5px;
+    border-bottom-left-radius: 5px;
+    opacity: 0.6;
+    z-index: 1;
+}
+
+.akd-videoWrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    padding-top: 25px;
+    height: 0;
+}
+
+.akd-videoWrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+navbar-text pull-right glyphicon-search {
+    margin-right: 50px;
+}
+
+.ng-untouched.invalid-input{
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #a94442;
+}

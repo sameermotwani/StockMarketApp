@@ -1,0 +1,49 @@
+<div class="panel panel-info" ng-controller="OpinionController as opn">
+    <div class="panel-heading" >
+        <div class="pull-right">
+            <a data-toggle="collapse" data-target="#collapse_opinions">
+                <span class="glyphicon glyphicon-chevron-down"></span>
+            </a>
+        </div>
+        <div><b>Expert Opinion</b></div>
+    </div>
+    <div class="panel-body panel-group collapse in" id="collapse_opinions">
+        <div class="alert alert-info" ng-show="opn.noOpinion">
+            {{opn.noOpinion}}
+        </div>
+        <div ng-repeat="opinion in opn.opinions" class="panel panel-default">
+            <div class="opinion-section" id="op{{opinion._user._id}}">
+                <div class="pull-right" ng-show="opn.editAccess">
+                    <a href="" ng-click="opn.editOpinion(opinion)">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="" ng-click="opn.deleteOpinion(opinion._id)">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </a>
+                </div>
+                <span class="opinion-user">{{opinion._user.username}}:</span>
+                <span class="opinion-comment">{{opinion.comment}}</span>
+            </div>
+        </div>
+        <form name="form" id="form" novalidate class="panel panel-default" ng-show="opn.editAccess">
+            <div class="opinion-add">
+                <textarea placeholder="Type your comment"
+                          name="opinionComment"
+                          ng-model="opn.opinion.comment"
+                          class="form-control"></textarea>
+                <button class="btn btn-success btn-block"
+                        ng-disabled="!opn.opinion.comment"
+                        ng-hide="opn.editMode"
+                        ng-click="opn.addOpinion(opn.opinion)">Add</button>
+                <button class="btn btn-success btn-block"
+                        ng-disabled="!opn.opinion.comment"
+                        ng-show="opn.editMode"
+                        ng-click="opn.updateOpinion(opn.opinion)">Update</button>
+                <button class="btn btn-cancel btn-block"
+                        href="#{{opn.opinion._user._id}}"
+                        ng-show="opn.editMode"
+                        ng-click="opn.cancelUpdate(opn.opinion)">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
